@@ -41,16 +41,26 @@ This script creates the foundational database schema and populates a comprehensi
 2. Click **Import Notebook** and upload `LUCE_LINE_BEER_NOTEBOOK.ipynb`
 3. Configure the notebook settings:
    - **Runtime**: Snowflake Warehouse Runtime 2.0
-   - **Packages**: Add `beautifulsoup4` to the package list
-   - **Warehouse**: Select an appropriate warehouse for execution
+   - **Warehouse**: SNOWFLAKE_INTELLIGENCE_WH
+   - Select **Create**
 
+<img src="Images/notebook%20create%20settings.png" alt="Notebook Creation Settings" width="60%" height="60%">
+
+Once the Notebook 
+4. **Packages**: Add `beautifulsoup4` to the package list
+
+<img src="Images/add%20notebook%20packages.png" alt="Add Notebook Package" width="50%" height="50%">
+
+5. **Start** the Notebook Session, if not already started.
+6. Run each cell.
 ### Step 3: Role Configuration
 
 Ensure you're using the correct role in Snowsight:
+- click on your user in the bottom left of the screen and select role ***snowflake_intelligence_admin_rl***
 
-```sql
-USE ROLE snowflake_intelligence_admin_rl;
-```
+<img src="Images/snowsight%20select%20user.png" alt="Select User" width="50%" height="50%">
+
+<img src="Images/snowflake%20intel%20role.png" alt="Select User" width="50%" height="50%">
 
 This role has the necessary permissions to:
 - Access external networks for web scraping
@@ -70,8 +80,7 @@ This role has the necessary permissions to:
 ### Step 5: Create AI Agent
 
 1. In **Snowsight**, navigate to **AI & ML** → **Agents**
-2. Create a new agent using the `BEERMANTICS_VECTOR` semantic model
-3. Configure the agent with beer recommendation prompts and instructions
+2. Create a new agent using the `BEERMANTICS_VECTOR` semantic in the Cortex Analyst section
 
 ### Step 6: Access Snowflake Intelligence
 
@@ -111,30 +120,3 @@ The YAML configuration enables sophisticated queries including:
 - Flavor profile similarity using vector embeddings
 - ABV-based filtering and recommendations
 - Cross-referencing between local and reference beer databases
-
-## Usage Examples
-
-Once setup is complete, you can ask questions like:
-
-- **Preference-based**: "I usually drink West Coast IPAs, what should I try?"
-- **Similarity searches**: "Find me something similar to [specific beer name]"
-- **Constraint-based**: "I want something under 5% ABV"
-- **Style exploration**: "What's the difference between a Hazy IPA and West Coast IPA?"
-
-## Technical Notes
-
-- The web scraper is resilient with fallback mechanisms
-- Vector embeddings are generated using Snowflake's Arctic model
-- The system handles 15+ concurrent beer varieties from Luce Line
-- Reference database covers major craft beer styles and popular examples
-
-## Files Overview
-
-- **setup.sql**: Database initialization and reference data loading
-- **LUCE_LINE_BEER_NOTEBOOK.ipynb**: Web scraping notebook for live tap list data
-- **BEERMANTICS_VECTOR.yaml**: Semantic model configuration for AI queries
-- **README.md**: This setup guide
-
----
-
-*Built with Snowflake Cortex AI, Snowflake Intelligence, and modern web scraping techniques.*
