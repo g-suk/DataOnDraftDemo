@@ -1,10 +1,6 @@
 # 🍺 Beermantics: AI-Powered Beer Recommendation System
 
-A complete Snowflake-based solution that scrapes live beer data from Luce Line Brewing and provides intelligent beer recommendations using vector embeddings and Snowflake Cortex AI.
-
-## Overview
-
-This system combines web scraping, vector embeddings, and semantic search to create an intelligent beer recommendation engine. It scrapes real-time tap list data from Luce Line Brewing, compares it against a reference database of popular craft beers, and provides personalized recommendations using AI.
+This system combines web scraping via a stored procedure using external network access, vector embeddings, and semantic search to create an intelligent beer recommendation engine. It scrapes real-time tap list data from Luce Line Brewing, compares it against a reference database of popular craft beers, and provides personalized recommendations using AI.
 
 ## Prerequisites
 
