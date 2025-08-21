@@ -24,7 +24,7 @@ Run the setup script to create the database, tables, and load reference beer dat
 -- - data_on_draft database
 -- - LUCE_LINE_TAP_LIST table
 -- - REFERENCE_BEERS table with 200+ popular craft beers
--- - Vector embeddings for all reference beers
+-- - Vector embeddings based on style and description for all beers
 ```
 
 **File**: `setup.sql`
